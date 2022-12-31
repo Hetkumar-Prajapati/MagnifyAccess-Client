@@ -1,0 +1,18 @@
+body {
+    padding: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  } 
+  .about-title{
+    padding: 25px ;
+    background-color: #006892;
+    color: white;
+  }
+  .about-paras{
+    padding: 50px 150px 20px 150px;
+  }
+  

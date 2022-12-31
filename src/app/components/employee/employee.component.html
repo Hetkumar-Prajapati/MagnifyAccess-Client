@@ -1,0 +1,66 @@
+<div class="employee-title">
+    <h3 class="text-center">Employee Management System (EMS) - Dashboard</h3>
+</div>
+
+<section class="employee-data">
+    <div class="row">
+
+        <section class="col-8" style="background-color: rgb(255, 252, 252);">
+            <div>
+                <h2> Employee Details </h2>
+            </div>
+            <table id="example" style="margin-top: 25px;" class=" display table table-striped table-bordered">
+                <thead style="background-color: rgb(157, 155, 155); color:black;">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="cursor: pointer;"
+                        (click)="selectEmployee(employee._id, employee.name, employee.department, employee.status, employee.email)"
+                        *ngFor="let employee of employees">
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.department}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="col-4 ">
+            <h2> Employee Data</h2>
+            <fieldset class="p-2">
+                <label class="col-4">Name: *</label>
+                <input required [(ngModel)]="name" />
+            </fieldset>
+            <fieldset class="p-2">
+                <label class="col-4">Department: *</label>
+                <input required [(ngModel)]="department" />
+            </fieldset>
+            <fieldset class="p-2">
+                <label class="col-4">Status: *</label>
+                <select required [(ngModel)]="status">
+                    <option>Active</option>
+                    <option>Not Active</option>
+                </select>
+            </fieldset>
+            <fieldset class="p-2">
+                <label class="col-4">Email: *</label>
+                <input required [(ngModel)]="email" />
+            </fieldset>
+
+            <div class="offset-2">
+                <button class="btn btn-primary" (click)="addEmployee()" *ngIf="!_id">Save</button>
+                <button class="btn btn-primary" (click)="updateEmployee()" *ngIf="_id">Save</button>
+                <button class="btn btn-danger m-1" (click)="deleteEmployee(_id)" *ngIf="_id">Delete</button>
+                <button class="btn btn-secondary m-1" (click)="clearForm()">Reset</button>
+            </div>
+        </section>
+    </div>
+</section>

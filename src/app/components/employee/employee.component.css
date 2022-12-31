@@ -1,0 +1,19 @@
+body {
+    padding: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  } 
+
+  .employee-title{
+    padding: 25px ;
+    background-color: #006892;
+    color: white;
+  }
+  .employee-data{
+    padding: 70px 70px 70px 100px;
+  }
+  
